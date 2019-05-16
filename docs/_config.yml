@@ -1,3 +1,4 @@
 theme: jekyll-theme-midnight
+baseurl: index.md
 title: Test Project Page
 description: This is the test project page
