@@ -12,23 +12,23 @@ These are the additional features that that can be activated trough the Post Pro
 ![](/images/pp001.PNG)
 
 
-[Add Command to Begin/End of Job](addCommand.md)
-[Add Debug Information](addDebug.md)
-[Add Command to Begin/End of Job](addCommand.md)
-[Check Tool Offset](checkToolOffset.md)
-[Enable Clamp (M10/M11)](enableClamp.md)
-[Comment Line Formatting](commentFormatting.md)
-[Dwell after Spindle Start](dwell.md)
-[Force Program Name to be Numeric](forceNumeric.md)
-[XY-Position at End of Job](xyPosition.md)
-[Z-Position at End of Job](zPosition.md)
-[Rotary Table Axis](rotaryAxis.md)
-[Write CNC12 Info Variables](CNC12.md)
+* [Add Command to Begin/End of Job](addCommand.md)
+* [Add Debug Information](addDebug.md)
+* [Add Command to Begin/End of Job](addCommand.md)
+* [Check Tool Offset](checkToolOffset.md)
+* [Enable Clamp (M10/M11)](enableClamp.md)
+* [Comment Line Formatting](commentFormatting.md)
+* [Dwell after Spindle Start](dwell.md)
+* [Force Program Name to be Numeric](forceNumeric.md)
+* [XY-Position at End of Job](xyPosition.md)
+* [Z-Position at End of Job](zPosition.md)
+* [Rotary Table Axis](rotaryAxis.md)
+* [Write CNC12 Info Variables](CNC12.md)
 
-# Other added Functionality
+# Additional Post Processor Logic
 Additional logic has been added to the Post Processor to support
 
-[Check for conflicting Tool Numbers (same Number but different Tools)](checkDuplicateTools.md)
-[Support for Manual NC Commands](manualNC.md)
+* [Check for conflicting Tool Numbers (same Number but different Tools)](checkDuplicateTools.md)
+* [Support for Manual NC Commands](manualNC.md)
 
 
