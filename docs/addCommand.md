@@ -14,9 +14,9 @@ This feature does give you a lot of flexibility of how to use it. These are just
 
 ### Display a Message
 You can display a message on your monitor by adding 
-'''
+```
 M200 = "My Message goes here.\n\nPress Cycle Start to continue"
-'''
+```
 
 
 [Back](index.md)
