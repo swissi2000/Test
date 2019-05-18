@@ -36,5 +36,5 @@ The diplayed message will look like this:
 
 ![](/images/pp007.PNG)
 
-test
+
 [Back](index.md)
