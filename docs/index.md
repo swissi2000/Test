@@ -11,7 +11,6 @@ These are the additional features that that can be activated trough the Post Pro
 
 * [Add Command to Begin/End of Job](addCommand.md)
 * [Add Debug Information](addDebug.md)
-* [Add Command to Begin/End of Job](addCommand.md)
 * [Check Tool Offset](checkToolOffset.md)
 * [Enable Clamp (M10/M11)](enableClamp.md)
 * [Comment Line Formatting](commentFormatting.md)

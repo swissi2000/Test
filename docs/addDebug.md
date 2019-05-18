@@ -5,14 +5,14 @@
 
 By activating this Property, the Post Processor will add debugging Information to the output file. The Debug Information will indicate which function of the Post Processor was used to create the block/line.
 
-An output file with debug information does not run with CNC12.
+An output file with debug information does not run with CNC12 and can only be used for debugging purposes.
 
 ## Implementation Details
 By activating this property in the Post Processor, these internal variables will be set to signal the Post Processor to output debug information:
 
 ```javascript
-    setWriteInvocations(true);
-    setWriteStack(false);
+setWriteInvocations(true);
+setWriteStack(false);
 ```    
 
 The output file will look like this:
@@ -281,7 +281,7 @@ N55 M7
 N65 G0 X-76.045 Y-61.399
 N70 G43 Z50. H3
 .
-.
+. (middle section cut)
 .
 !DEBUG: onSectionEnd()
 N6420 M9
