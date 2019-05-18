@@ -15,8 +15,12 @@ This feature does give a lot of flexibility of how to use it. These are just a c
 ### Display a Message
 Display a message on the monitor by adding 
 ```
-M200 "My Message goes here.\n\nPress Cycle Start to continue"
+M200 "Ready to start the Job?\n\nPress Cycle Start to continue\nPress Reset to cancel"
 ```
+
+![](/images/pp003.PNG)
+
+This provides additional machine protection by giving a chance to cancel the Job should you have pressed Cycle Start by accident.
 
 ### Execute a Macro
 There are several options to execute a Macro. An easy way is to use one of the available mfuncxx.mac files like mfunc51.mac and mfunc52.mac to execute the desired Commands. As seen in the screenshot above, a simple M51 or M52 command can then be entered in the Property field to have the macro executed.
