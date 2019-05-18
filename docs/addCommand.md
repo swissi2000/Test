@@ -34,7 +34,7 @@ M98 "C:\cncm\ncfiles\end.cnc"
 In combination with the [Property: Write CNC12 Info Variables](CNC12.md), there are very creative ways to make use of this functionality. To get some ideas, look at the example below.
 
 ### Usage Example
-The following example will display an Information Screen at the start of a job file and will record the Date, Time,Run-Time-Length as well as the Name and Version Number of the Fusion 360 CAM File the job was created with, to a log file. The log file does have the same name as the job but with a .log extension and will be in the same directory as the job file. Modify the scripts to your needs.
+The following example will display an Information Screen at the start of a job file and will record the Date, Time, Run-Time-Length as well as the Name and Version Number of the Fusion 360 CAM File the job was created with, to a log file. The log file does have the same name as the job but with a .log extension and will be in the same directory as the job file. Modify the scripts to your needs.
 
 Set the following Properties in the Post Processor:
 
@@ -59,6 +59,21 @@ The Info Message does give the following information:
 * Origin Point (Part Zero) in relation to Stock Coordinates
 * WCS
 * List of Tools used in the Job (limited to first 10 Tools)
+
+The log file 1001.log will look like this:
+
+```
+1001.log
+
+    Run Date: Sat May 11 10:05:34 2019
+    Based on CAM File: Lift Plate v10
+    Run Time:  0:06:15
+
+    Run Date: Sat May 18 11:30:59 2019
+    Based on CAM File: Lift Plate v11
+    Run Time:  0:04:23
+
+```    
 
 Goto [Property: Write CNC12 Info Variables](CNC12.md) for more details about what Fusion 360 information will be available in CNC12. 
 
