@@ -15,7 +15,7 @@ This feature does give a lot of flexibility of how to use it. These are just a c
 ### Display a Message
 Display a message on the monitor by adding 
 ```
-M200 "Ready to start the Job?\n\nPress Cycle Start to continue\nPress Reset to cancel"
+M200 "Ready to start the Job?\n\nPress Cycle Start to continue\nRESET to Cancel"
 ```
 
 ![](/images/pp003.PNG)
