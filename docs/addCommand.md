@@ -30,6 +30,8 @@ M98 "C:\cncm\ncfiles\end.cnc"
 In combination with the [Property: Write CNC12 Info Variables](CNC12.md), there are very creative ways to make use of this functionality as shown in the example below.
 
 ### Usage Example
+The following example will display an Information Screen at the start of a job file and will record the Date, Time,Run-Time-Length as well as the Name and Version Number of the Fusion 360 CAM File the job was created with, to a log file that has the same name as the job but with a .log extension. The log file will be in the same directory as the job file. Modify the scripts to your needs.
+
 Set the following Properties in the Post Processor:
 
 ```
@@ -37,8 +39,21 @@ Property: Add Command to Begin of Job = M98 "C:\cncm\ncfiles\begin.cnc"
 Property: Add Command to End of Job   = M98 "C:\cncm\ncfiles\end.cnc"
 Property: Write CNC12 Info Variables  = Yes
 ```
+Get the files [begin.cnc](https://github.com/swissi2000/Test/blob/master/begin.cnc) and [end.cnc](https://github.com/swissi2000/Test/blob/master/end.cnc) and copy them to the C:\cncm\ncfiles folder.
 
+When running a job in CNC12 that was created with these Property settings, CNC12 will present an Info Message when the Cycle Start button is pressed:
 
+![](/images/pp003.PNG)
+
+The Info Message does give the following information:
+
+* Fusion 360 CAM File Name
+* Program Name
+* Program Comment
+* Origin Point (Part Zero) in relation to Stock Coordinates
+* WCS used
+* List of Tools used in the Job (limited to first 10 Tools)
+about the job file, will display comments if any where added in Fusion 360, 
 
 [Back](index.md)
 
