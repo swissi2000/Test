@@ -20,7 +20,7 @@ M200 "Ready to start the Job?\n\nPress Cycle Start to continue\nRESET to Cancel"
 
 ![](/images/pp003.PNG)
 
-This provides additional machine protection by giving a chance to cancel the Job should you have pressed Cycle Start by accident.
+This provides additional machine protection by giving a chance to cancel the Job if Cycle Start has been pressed by accident.
 
 ### Execute a Macro
 There are several options to execute a Macro. An easy way is to use one of the available mfuncxx.mac files like mfunc51.mac and mfunc52.mac to execute the desired Commands. As seen in the screenshot above, a simple M51 or M52 command can then be entered in the Property field to have the macro executed.
@@ -31,10 +31,10 @@ Another option is to use a M98 command to call a subprogramm/macro like this:
 M98 "C:\cncm\ncfiles\begin.cnc"
 M98 "C:\cncm\ncfiles\end.cnc"
 ```
-In combination with the [Property: Write CNC12 Info Variables](CNC12.md), there are very creative ways to make use of this functionality as shown in the example below.
+In combination with the [Property: Write CNC12 Info Variables](CNC12.md), there are very creative ways to make use of this functionality. To get some ideas, look at the example below.
 
 ### Usage Example
-The following example will display an Information Screen at the start of a job file and will record the Date, Time,Run-Time-Length as well as the Name and Version Number of the Fusion 360 CAM File the job was created with, to a log file that has the same name as the job but with a .log extension. The log file will be in the same directory as the job file. Modify the scripts to your needs.
+The following example will display an Information Screen at the start of a job file and will record the Date, Time,Run-Time-Length as well as the Name and Version Number of the Fusion 360 CAM File the job was created with, to a log file. The log file does have the same name as the job but with a .log extension and will be in the same directory as the job file. Modify the scripts to your needs.
 
 Set the following Properties in the Post Processor:
 
@@ -47,7 +47,7 @@ Get the files [begin.cnc](https://github.com/swissi2000/Test/blob/master/begin.c
 
 When running a job in CNC12 that was created with these Property settings, CNC12 will present an Info Message when the Cycle Start button is pressed:
 
-![](/images/pp003.PNG)
+![](/images/pp004.PNG)
 
 The Info Message does give the following information:
 
