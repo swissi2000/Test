@@ -1,7 +1,7 @@
 ;------------------------------------------------------------------------------
-; Filename: end.cnc
-; Description: Write the total job runtime to the log file that was opened with begin.cnc
-; Notes: Add M98 "c:\cncm\ncfiles\end.cnc" to the end of each Job
+; Filename: mfunc52.mac
+; Description: Write End of Job Info to "jobname".log file
+; Notes: Add M52 to the end of Job
 ; VARIABLES USED
 ; #25012 - Time in seconds - System variable
 ; #29951 - time started - User variable
@@ -28,4 +28,3 @@ IF #4201 || #4202 THEN GOTO 1000 ;Skip macro if graphing or searching
 M223 "Run Time: %2.0f:%02.0f:%02.0f\n\n" #29953 #29954 #29955
 
 N1000
-M99
