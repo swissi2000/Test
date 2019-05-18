@@ -6,8 +6,8 @@
 CNC12 allows two types of comment formatting:
 
 ```javascript
-(This is Comment Option 1)
-:This is Comment Option 2)
+(This is the default Comment Option)
+:This is the alternative Comment Option
 ```
 
 ## Implementation Details

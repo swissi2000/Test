@@ -14,7 +14,7 @@ These are the additional features that that can be activated trough the Post Pro
 * [Check Tool Offset](checkToolOffset.md)
 * [Enable Clamp (*M10/M11*)](enableClamp.md)
 * [Comment Line Formatting](commentFormatting.md)
-* [Dwell after Spindle Start](dwell.md)
+* [Dwell after Spindle Start](enableDwell.md)
 * [Force Program Name to be Numeric](forceNumeric.md)
 * [XY-Position at End of Job](xyPosition.md)
 * [Z-Position at End of Job](zPosition.md)
