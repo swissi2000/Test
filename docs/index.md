@@ -9,9 +9,6 @@ Using the Post Processor Properties to write Fusion 360 Information to CNC12 var
 # Added Post Processor Properties Features
 These are the additional features that that can be activated trough the Post Processor Properties
 
-![](/images/pp001.PNG)
-
-
 * [Add Command to Begin/End of Job](addCommand.md)
 * [Add Debug Information](addDebug.md)
 * [Add Command to Begin/End of Job](addCommand.md)
@@ -24,6 +21,8 @@ These are the additional features that that can be activated trough the Post Pro
 * [Z-Position at End of Job](zPosition.md)
 * [Rotary Table Axis](rotaryAxis.md)
 * [Write CNC12 Info Variables](CNC12.md)
+
+![](/images/pp001.PNG)
 
 # Additional Post Processor Logic
 Additional logic has been added to the Post Processor to support
