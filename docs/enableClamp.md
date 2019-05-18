@@ -1,8 +1,8 @@
 # Enable Clamp *M10/M11*
-## Description
 
 ![](/images/pp008.PNG)
 
+## Description
 This Property allows to enable the *Clamp* commands *M10/M11* of a rotary table and is being used in combination with the [Property: Rotary Table Axis](rotaryAxis.md).
 
 ## Implementation Details

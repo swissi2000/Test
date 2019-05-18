@@ -1,8 +1,9 @@
 # Add Command to Begin/End of Job
-## Description
-This allows to add one M Command (CNC12 accepts only one M Command per block/line) or multiple G Commands.
 
 ![](/images/pp002.PNG)
+
+## Description
+This allows to add one M Command (CNC12 accepts only one M Command per block/line) or multiple G Commands.
 
 ## Implementation Details
 The text entered in this property field must start with a M or a G followed by a number. If this is not the case, the text will be added to the job file as a comment. So this property does allow to add a comment to the job file at the beginning and the end instead of a command.

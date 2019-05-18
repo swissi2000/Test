@@ -1,8 +1,8 @@
 # Check Tool Offset 
-## Description
 
 ![](/images/pp006.PNG)
 
+## Description
 This Property allows to stop program execution after each tool offset command. This allows to verify if the correct tool offset has been applied.
 
 There are two options available, a *M0* stop or a *M200* message. Both need to be confirmed with a *Cycle Start* for the job to continue. Also in both cases the block/line will be preceded by the Skip Command "/" which will allow these stops to be skipped by activating */Skips On* in CNC12 (*Run[F4]->/Skips On[F4]*).

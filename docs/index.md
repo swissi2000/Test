@@ -12,7 +12,7 @@ These are the additional features that that can be activated trough the Post Pro
 * [Add Command to Begin/End of Job](addCommand.md)
 * [Add Debug Information](addDebug.md)
 * [Check Tool Offset](checkToolOffset.md)
-* [Enable Clamp (M10/M11)](enableClamp.md)
+* [Enable Clamp (*M10/M11*)](enableClamp.md)
 * [Comment Line Formatting](commentFormatting.md)
 * [Dwell after Spindle Start](dwell.md)
 * [Force Program Name to be Numeric](forceNumeric.md)

@@ -1,8 +1,8 @@
 # Add Debug Information 
-## Description
 
 ![](/images/pp005.PNG)
 
+## Description
 By activating this Property, the Post Processor will add debugging Information to the output file. The Debug Information will indicate which function of the Post Processor was used to create the block/line.
 
 An output file with debug information does not run with CNC12 and can only be used for debugging purposes.
