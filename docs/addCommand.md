@@ -54,10 +54,14 @@ The Info Message does give the following information:
 * Fusion 360 CAM File Name
 * Program Name
 * Program Comment
+* Setup Name
+* Setup Notes if any where entered
 * Origin Point (Part Zero) in relation to Stock Coordinates
-* WCS used
+* WCS
 * List of Tools used in the Job (limited to first 10 Tools)
-about the job file, will display comments if any where added in Fusion 360, 
+
+Goto [Property: Write CNC12 Info Variables](CNC12.md) for more details about what Fusion 360 information will be available in CNC12. 
+
 
 [Back](index.md)
 
