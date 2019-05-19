@@ -15,7 +15,7 @@ These are the additional features that that can be activated trough the Post Pro
 * [Enable Clamp (*M10/M11*)](enableClamp.md)
 * [Comment Line Formatting](commentFormatting.md)
 * [Dwell after Spindle Start](enableDwell.md)
-* [Force Program Name to be Numeric](forceNumeric.md)
+* [Enforce Numeric Program Name](forceNumeric.md)
 * [XY-Position at End of Job](xyPosition.md)
 * [Z-Position at End of Job](zPosition.md)
 * [Rotary Table Axis](rotaryAxis.md)
