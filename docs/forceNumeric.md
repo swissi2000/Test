@@ -40,6 +40,8 @@ O01001
 The Post Processor will write a block/line with the *Program Number* preceded by the letter "*O*". This *O-Program Number* is accepted by CNC12 and provides some built-in functionality. This is the description of this functionality from *Centroid's CNC12 Operators Manual*:
 
 ```
+*Centroid's CNC12 Operators Manual*
+
 Chapter 11.2.6 O — Program Number
 
 The O program number allows you to identify your program with a certain number. 
