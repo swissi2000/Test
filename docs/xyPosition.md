@@ -3,7 +3,7 @@
 ![](/images/pp013.PNG)
 
 ## Description
-This Property allows to modify the X and Y return coordinates of the table at the end of a job. 
+This Property allows to modify the X and Y-Axis return position at the end of a job. 
 
 Possible options are:
 
