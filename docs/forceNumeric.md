@@ -41,7 +41,13 @@ The Post Processor will write a block/line with the *Program Number* preceded by
 
 ```
 Chapter 11.2.6 O — Program Number
-The O program number allows you to identify your program with a certain number. However, if the speciﬁed program number is 9100-9999, the G-codes from the O number through the next M99 will be extracted (but not executed) and placed in a separate subprogram/macro ﬁle named Oxxxx.cnc, where xxxx is the speciﬁed program number. This separate ﬁle can later be called with M98 or G65.
+
+The O program number allows you to identify your program with a certain number. 
+However, if the speciﬁed program number is 9100-9999, the G-codes from the O number 
+through the next M99 will be extracted (but not executed) and placed in a separate 
+subprogram/macro ﬁle named Oxxxx.cnc, where xxxx is the speciﬁed program number. 
+This separate ﬁle can later be called with M98 or G65.
+
 ```
 
 ### Option NOT to Enforce Numeric Program Name
