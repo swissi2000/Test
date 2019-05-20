@@ -69,7 +69,7 @@ As seen on the last two examples on the list above, the name/number of the *CNC1
 
 Also if some of this information is not needed in a job file, setting the variable name/number to "" will skip that info in the output file. This is an example of a job file:
 
-```javascript
+```python 
 %
 O01001
 N10 #301 = "Lift Plate Final v13"   ; Fusion 360 Design File Name
@@ -191,5 +191,6 @@ Copy the example mfunc6.mac file from the [Repository](https://github.com/swissi
 ### Other Use Cases
 * Check out the information about the [*Property: Add Command to Begin/End of Job*](addCommand.md) for more examples of how to use the CNC12 variables.
 * Also check out the chapter [*Support for Manual NC Commands*](manualNC.md) for ideas of how to use *Manual NC* commands in Fusion 360 to display useful information in CNC12.
+
 
 [Back](index.md)
