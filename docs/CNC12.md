@@ -181,6 +181,15 @@ N7205 #326 = ""
 %
 ```
 ## Use Cases
-Macros can be used to display
+Macros can be used to display the information from the User-String-Variables.
+
+### Customized Tool Change Macro
+Copy the example mfunc6.mac file from the [Repository](https://github.com/swissi2000/Test) to the *C:\cncm\* folder. A M6 tool change will now provide the following additional information:
+
+![](/images/pp020.PNG)
+
+### Other Use Cases
+* Check out the information about the [*Property: Add Command to Begin/End of Job*](addCommand.md) for more examples of how to use the CNC12 variables.
+* Also check out the chapter [*Support for Manual NC Commands*](manualNC.md) for ideas of how to use *Manual NC* commands in Fusion 360 to display useful information in CNC12.
 
 [Back](index.md)
