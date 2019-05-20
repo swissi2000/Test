@@ -49,6 +49,32 @@ If this *Property* is enabled, the Post Processor will fill *User-String-Variabl
 ```
 
 ## Implementation Details
+All these *CNC12 User-String-Variables* are defind at the beginning of the Post Processor around code line #120:
+
+```javascript
+...
+// Begin Customizable CNC12 User-String-Variables. Valid Numbers #300 - #399 -swissi
+//To prevent a parameter of being written to the CNC-File, set the variable name to xyzVar = ""
+var writeToolLineVar  = "#300"   // Holds Tool Information from the Fusion 360 Tool Library. Updated before each Tool Change
+var designNameVar     = "#301"   // Holds the Fusion 360 Design File Name. Defined at the beginning and does not change
+var programNameVar    = "#302"   // Holds the Fusion 360 Program Name/Number as specified in the Post Window
+var programCommentVar = "#303"   // Holds the Fusion 360 Program comment as specified in the Post Window
+var setupNameVar      = "#304"   // Holds the Fusion 360 Setup Name. Changes for each Setup in the Post
+var setupNotesVar     = "#305"   // Holds the Fusion 360 Setup Notes. Changes for each Setup in the Post
+var toolPathNameVar   = "#399"   <- Change User-Variable-Number if required
+var toolPathNotesVar  = ""       <- This will NOT write this info to the job file
+...
+```
+
+As seen on the last two examples on the list above, the name/number of the *CNC12 User-String-Variable* can be changed should any of these varibales conflict with a variable that's already been used in other scripts/macros. Just be aware that the example scripts provided here need to be adjusted to the new variable name/number.
+
+Also if some of this information is not needed in a job file, setting the varibale name/number to "" will skip that info in the output file. This is an example of a job file:
+
+```javascript
+
+```
+
+####
 
 
 [Back](index.md)
