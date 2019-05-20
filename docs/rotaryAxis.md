@@ -15,23 +15,20 @@ Possible options are:
 * Along -B (B- Axis)
 * Along -Z (C- Axis)
 
-This graphics is showing the positive directions of all the axis:
+Along +X means the workpiece is pointing in the positive direction of the X Axis. This graphics is showing the positive directions of all the axis:
 
 ![](/images/pp017.JPG)
 
+The arrows of the graphics above are pointing in the positive direction but keep in mind that the arrow indicates the direction of the tool, not the workpiece. This is also true for rotating axis. 
 
+### Example
+A rotary table installed along the X-Axis, workpiece pointing to the positive direction of the X-Axis. Now looking onto the chuck from the workpiece side, the positive tool direction would be CCW, that means the chuck needs to turn CW for a positive move of the A Axis. By definition, this rotary table should be configured *Along +X*. The only difference between *Along +X* and *Along -X* is the rotational direction of the axis. Should the Axis turn the wrong way with one setting, just pick the opposite setting to correct it.
 
 
 ## Implementation Details
-The default value is *G28*. Selecting *No Move* can be dangerous and is not recommended. Use it at yourt own risk!
+There are many different versions of rotary axis and for some of them, additional configuration settings are needed in the Post Processor. Because the Centroid Acorn CNC Control Board is intended for the DIY market, the settings for the most commen rotary table in this environment have been choosen which is a rotary axis with continous movement that does not need to be rewind.
 
-The coordinates of the *G28* and *G30* commands can be configured in CNC12 under *Setup[F1]->Part[F1]->WCS Table[F9]->Return[F1]*
-
-![](/images/pp014.PNG)
-
-The default values in CNC12 for *G28* and *G30* for all axis is *0*, so by default the machine will return to the *Z0* position at the end of the job.
-
-Choose one of the available Return-Options and modify the return coordinates in CNC12 as required.
+For additional information how to setup a 4th Axis in the Fusion 360 Post Processor, check out the [Autodesk Guide](https://knowledge.autodesk.com/support/fusion-360/learn-explore/caas/sfdcarticles/sfdcarticles/How-to-make-a-3-axis-post-processor-from-the-HSM-post-processor-library-support-4-or-5-axis-motion.html).
 
 
 [Back](index.md)
