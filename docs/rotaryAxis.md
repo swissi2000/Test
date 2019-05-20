@@ -30,7 +30,7 @@ Now looking onto the chuck from the workpiece side, the positive tool direction 
 
 
 ## Implementation Details
-There are many different versions of rotary axis and for some of them, additional configuration settings are needed in the Post Processor. Because the Centroid Acorn CNC Control Board is intended for the DIY market, the settings for the most commen rotary table in this environment have been choosen which is a rotary axis with continous movement that does not need to be rewind.
+There are many different versions of rotary axis and for some of them, additional configuration settings are needed in the Post Processor. Because the Centroid Acorn CNC Control Board is intended for the DIY market, the settings for the most commen rotary table in this environment have been choosen which is a rotary axis with continous movement that does not need to be rewinded.
 
 For additional information how to setup a 4th Axis in the Fusion 360 Post Processor, check out the [Autodesk Guide](https://knowledge.autodesk.com/support/fusion-360/learn-explore/caas/sfdcarticles/sfdcarticles/How-to-make-a-3-axis-post-processor-from-the-HSM-post-processor-library-support-4-or-5-axis-motion.html).
 
