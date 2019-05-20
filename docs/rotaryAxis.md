@@ -11,18 +11,22 @@ Possible options are:
 * Along +X (A Axis)
 * Along +Y (B Axis)
 * Along +Z (C Axis)
-* Along -X (A- Axis)
-* Along -B (B- Axis)
-* Along -Z (C- Axis)
+* Along -X (A Axis reversed)
+* Along -B (B Axis reversed)
+* Along -Z (C Axis reversed)
 
-Along +X means the workpiece is pointing in the positive direction of the X Axis. This graphics is showing the positive directions of all the axis:
+Along +X means the workpiece is pointing in the positive direction of the X Axis. The graphic below is showing the positive directions of all the axis:
 
 ![](/images/pp017.JPG)
 
-The arrows of the graphics above are pointing in the positive direction but keep in mind that the arrow indicates the direction of the tool, not the workpiece. This is also true for rotating axis. 
+The arrows of the graphics above are pointing in the positive direction but keep in mind that the arrow indicates the direction of the tool, not the workpiece. This is also true for rotary axis. 
 
 ### Example
-A rotary table installed along the X-Axis, workpiece pointing to the positive direction of the X-Axis. Now looking onto the chuck from the workpiece side, the positive tool direction would be CCW, that means the chuck needs to turn CW for a positive move of the A Axis. By definition, this rotary table should be configured *Along +X*. The only difference between *Along +X* and *Along -X* is the rotational direction of the axis. Should the Axis turn the wrong way with one setting, just pick the opposite setting to correct it.
+A rotary table installed along the X Axis, workpiece pointing to the positive direction. 
+
+![](/images/pp018.PNG)
+
+Now looking onto the chuck from the workpiece side, the positive tool direction would be CCW, that means the chuck needs to turn CW for a positive move of the A Axis. By definition, this rotary table should be configured *Along +X*. The only difference between *Along +X* and *Along -X* is the rotational direction of the axis. Should the Axis turn the wrong way with one setting, just pick the opposite setting to correct it.
 
 
 ## Implementation Details
