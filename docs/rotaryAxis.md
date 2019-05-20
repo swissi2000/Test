@@ -24,7 +24,7 @@ The arrows of the graphics above are pointing in the positive direction but keep
 ### Example
 A rotary table installed along the X Axis, workpiece pointing to the positive direction. 
 
-![](/images/pp018.PNG)
+![](/images/pp018.JPG)
 
 Now looking onto the chuck from the workpiece side, the positive tool direction would be CCW, that means the chuck needs to turn CW for a positive move of the A Axis. By definition, this rotary table should be configured *Along +X*. The only difference between *Along +X* and *Along -X* is the rotational direction of the axis. Should the Axis turn the wrong way with one setting, just pick the opposite setting to correct it.
 
