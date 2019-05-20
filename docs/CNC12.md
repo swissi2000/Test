@@ -7,22 +7,21 @@ CNC12 offers 100 internal *User-String-Variables* that can be used by macros dur
 
 If this *Property* is enabled, the Post Processor will fill *User-String-Variables* with Information from Fusion 360 that can be used within CNC12. By default, the following information will be written to the job file:
 
-```javascript
-// File, Setup and Tool Path Information
-[#300](300.md) Holds Tool Information from the Fusion 360 Tool Library. Updated before each Tool Change
-#301 Holds the Fusion 360 Design File Name. Defined at the beginning and does not change
-#302 Holds the Fusion 360 Program Name/Number as specified in the Post Window
-#303 Holds the Fusion 360 Program comment as specified in the Post Window
-#304 Holds the Fusion 360 Setup Name. Changes for each Setup in the Post
-#305 Holds the Fusion 360 Setup Notes. Changes for each Setup in the Post
-#306 Holds the Fusion 360 Tool Path Name. Changes for every new Tool Path
-#307 Holds the Fusion 360 Tool Path Notes. Changes for every new Tool Path
+### File, Setup and Tool Path Information
+* [#300](300.md) Holds Tool Information from the Fusion 360 Tool Library. Updated before each Tool Change
+* [#301](301.md) Holds the Fusion 360 Design File Name. Defined at the beginning and does not change
+* [#302](302.md) Holds the Fusion 360 Program Name/Number as specified in the Post Window
+* [#303](303.md) Holds the Fusion 360 Program comment as specified in the Post Window
+* [#304](304.md) Holds the Fusion 360 Setup Name. Changes for each Setup in the Post
+* [#305](305.md) Holds the Fusion 360 Setup Notes. Changes for each Setup in the Post
+* [#306](306.md) Holds the Fusion 360 Tool Path Name. Changes for every new Tool Path
+* [#307](307.md) Holds the Fusion 360 Tool Path Notes. Changes for every new Tool Path
 
-// Tool Info from the Fusion 360 Tool Library. Updated before each Tool Change in the Post
+### Tool Info from the Fusion 360 Tool Library. Updated before each Tool Change in the Post
 #308 Tool Type 
 #309 Tool Unit (mm or in) 
 #310 Tool Diameter
-#311 Number of Flutes
+#311 Tool Number of Flutes
 #312 Tool Coolant
 #313 Tool Description from General Tab of Tool Settings
 #314 Tool Comment from Post Processor Tab of Tool Settings
@@ -46,7 +45,6 @@ If this *Property* is enabled, the Post Processor will fill *User-String-Variabl
 // First 10 Tools made available in variables when both Properties "writeTools" and "writeCNC12Vars" are true and variable name is assigned
 #351 - #360 Variable that will hold the Fusion 360 Tool Info for the first 10 Tools used
 
-```
 
 ## Implementation Details
 All these *CNC12 User-String-Variables* are defind at the beginning of the Post Processor around code line #120:
