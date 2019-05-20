@@ -39,7 +39,7 @@ If this *Property* is enabled, the Post Processor will fill *User-String-Variabl
 
 ### Setup Info. Updated for each new Setup in the Post
 * #324 Origin Point
-* #325 Z Clearance Height. Useful to display the distance when checkApproach Property is used
+* #325 Z Clearance Height. Useful in combination with checkApproach Property
 * #326 Current WCS
 
 ### First 10 Tools made available in variables when both Properties "writeTools" and "writeCNC12Vars" are true and variable name is assigned
