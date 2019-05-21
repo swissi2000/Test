@@ -39,8 +39,8 @@ If this *Property* is enabled, the Post Processor will fill *User-String-Variabl
 
 ### Setup Info. Updated for each new Setup in the Post
 * [#324](324.md) Origin Point
-* [#325](324.md) Z Clearance Height. Useful in combination with checkApproach Property
-* [#326](324.md) Current WCS
+* [#325](325.md) Z Clearance Height. Useful in combination with checkApproach Property
+* [#326](325.md) Current WCS
 
 ### First 10 Tools made available in variables when both Properties "writeTools" and "writeCNC12Vars" are true and variable name is assigned
 * [#351 - #360](351.md) Variable that will hold the Fusion 360 Tool Info for the first 10 Tools used
