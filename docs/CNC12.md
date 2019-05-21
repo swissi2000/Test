@@ -5,7 +5,7 @@
 ## Description
 CNC12 offers 100 internal *User-String-Variables* that can be used by macros during job execution. The names of these variables are *#300 - #399*.
 
-If this *Property* is enabled, the Post Processor will fill *User-String-Variables* with Information from Fusion 360 that can be used within CNC12. By default, the following information will be written to the job file:
+If this *Property* is enabled, the Post Processor will fill *User-String-Variables* with Information from Fusion 360 that can be used within CNC12. By default, the following information will be written to the job file (click the variable name/number for more details from where in Fusion 360 the information is coming from):
 
 ### File, Setup and Tool Path Information
 * [#300](300.md) Tool Info from the Fusion 360 Tool Library. Updated before each Tool Change
