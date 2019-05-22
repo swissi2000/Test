@@ -14,7 +14,7 @@ Manual NC commands can be added anywhere in the Fusion 360 CAM Browser structure
 
 ## Implementation Details
 
-### Comment
+### Manual NC: Comment
 This command gives the option to place comments into the job file. The formatting of the comment will be based on the [*Property: Comment Line Formatting*](commentFormatting.md).
 
 ![](/images/pp045.PNG)
@@ -33,8 +33,8 @@ N5170 Z15.
 .
 ```
 
-### Display Message
-This command gives the option to display a message on the screen. The job execution will stop until the message is been confirmed with a Cycle Start command.
+### Manual NC: Display Message
+This command gives the option to display a message on the screen. The job execution will stop until the message is been confirmed with a *Cycle Start* command.
 
 ![](/images/pp046.PNG)
 
@@ -57,7 +57,8 @@ During the execution of the job file in CNC12, job execution will stop before th
 
 The message needs to be confirmed with a *Cycle Start* before the job continous.
 
-### Pass through
+
+### Manual NC: Pass through
 As the name says, this command allows to pass a command unchanged through the Post Processor and will be placed in the job file at the position it was inserted in the CAM Browser Tree of Fusion 360. This is a very powerful command that allows to inject anything you can think off into the job file.
 
 *WARNING* there's no syntax check on these commands. If these commands include anything that CNC12 does not understand, CNC12 will stop job execution with an error message.
@@ -104,7 +105,7 @@ The two lines injected with *Manual NC: Pass through* commands before a toolpath
 The message needs to be confirmed with a *Cycle Start* before the job continous.
 
 
-### Call Program
+### Manual NC: Call Program
 This command allows to call a sub-program that will be executed before the job continues. 
 
 *WARNING* there's no syntax check on the the file name and if the file exists. If CNC12 can't open the file, job execution will be stopped with an error message.
@@ -122,7 +123,7 @@ Note that when no path name for the file is included, CNC12 will look for the fi
 .
 .
 N80 G21
-N85 M98 "begin.cnc"
+N85 M98 "c:\cncm\ncfiles\begin.cnc"
 (Outside Contour 2D Adaptive)
 N90 G28 G91 Z0.
 .

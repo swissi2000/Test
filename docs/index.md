@@ -6,7 +6,7 @@ Using the Post Processor Properties to write Fusion 360 Information to CNC12 var
 
 **Please report issues as such in GitHub. No Warranties are given. Use at your own risk!**
 
-# Added Post Processor Properties Features
+# Added Post Processor Properties
 These are the additional features that that can be activated trough the Post Processor Properties
 
 * [Add Command to Begin/End of Job](addCommand.md)
