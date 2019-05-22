@@ -21,10 +21,10 @@ M200 "Ready to start the Job?\n\nPress Cycle Start to continue\nRESET to Cancel"
 
 ![](/images/pp003.PNG)
 
-This provides additional machine protection by giving a chance to cancel the Job if Cycle Start has been pressed by accident.
+This provides additional machine protection by giving a chance to cancel the Job if *Cycle Start* has been pressed by accident.
 
 ### Execute a Macro
-There are several options to execute a Macro. An easy way is to use one of the available mfuncxx.mac files like mfunc51.mac and mfunc52.mac to execute multiple Commands. A simple M51 or M52 command can then be entered in the Property field to have the macro executed.
+There are several options to execute a Macro. An easy way is to use one of the available *mfuncxx.mac* files like *mfunc51.mac* and *mfunc52.mac* to execute multiple Commands. A simple *M51* or *M52* command can then be entered in the Property field to have the macro executed.
 
 Another option is to use a M98 command to call a subprogramm/macro like this:
 
@@ -44,9 +44,9 @@ Property: Add Command to Begin of Job = M98 "C:\cncm\ncfiles\begin.cnc"
 Property: Add Command to End of Job   = M98 "C:\cncm\ncfiles\end.cnc"
 Property: Write CNC12 Info Variables  = Yes
 ```
-Get the files [begin.cnc](https://github.com/swissi2000/Test/blob/master/begin.cnc) and [end.cnc](https://github.com/swissi2000/Test/blob/master/end.cnc) and copy them to the C:\cncm\ncfiles folder.
+Get the files *begin.cnc* and *end.cnc* from the [Repository](https://github.com/swissi2000/Test) and copy them to the *C:\cncm\ncfiles* folder.
 
-When running a job in CNC12 that was created with these Property settings, CNC12 will present an Info Message when the Cycle Start button is pressed:
+When running a job in CNC12 that was created with these Property settings, CNC12 will present an Info Message when the *Cycle Start* button is pressed:
 
 ![](/images/pp004.PNG)
 
@@ -77,6 +77,7 @@ The log file 1001.log will look like this:
 ```    
 
 Goto [Property: Write CNC12 Info Variables](CNC12.md) for more details about what Fusion 360 information will be available in CNC12. 
+Also check out the chapter [Support for Manual NC Commands](manualNC.md) for more options to inject commands into a job file.
 
 
 [Back](index.md)
