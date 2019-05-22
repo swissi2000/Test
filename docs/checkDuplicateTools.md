@@ -1,7 +1,7 @@
 # Check for conflicting Tool Numbers
 
 ## Description
-Additional logic has been added to the Post Processor that checks for conflicting Tool Information e.g. using the same Tool Number but with different diameters.
+Additional logic has been added to the Post Processor that checks for conflicting Tool Information e.g. using the same Tool Number but with different geometry.
 
 
 ## Implementation Details
