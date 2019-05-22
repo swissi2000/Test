@@ -120,15 +120,15 @@ propertyDefinitions = {
 };
 
 // Begin Customizable CNC12 User-String-Variables. Valid Numbers #300 - #399 -swissi
-//To prevent a parameter of being written to the CNC-File, set the variable name to xyzVar = ""
-var writeToolLineVar  = "#300"   // Holds Tool Information from the Fusion 360 Tool Library. Updated before each Tool Change
-var designNameVar     = "#301"   // Holds the Fusion 360 Design File Name. Defined at the beginning and does not change
-var programNameVar    = "#302"   // Holds the Fusion 360 Program Name/Number as specified in the Post Window. Default is info from Post Process tab from the first Setup being used in the post
-var programCommentVar = "#303"   // Holds the Fusion 360 Program comment as specified in the Post Window. Default is info from Post Process tab from the first Setup being used in the post
-var setupNameVar      = "#304"   // Holds the Fusion 360 Setup Name. Changes for each Setup in the Post
-var setupNotesVar     = "#305"   // Holds the Fusion 360 Setup Notes. Changes for each Setup in the Post
-var toolPathNameVar   = "#306"   // Holds the Fusion 360 Tool Path Name. Changes for every new Tool Path
-var toolPathNotesVar  = "#307"   // Holds the Fusion 360 Tool Path Notes. Changes for every new Tool Path
+//To prevent a parameter from being written to the CNC-File, set the variable name to xyzVar = ""
+var writeToolLineVar  = "#300"   // Tool Information from the Fusion 360 Tool Library. Updated before each Tool Change
+var designNameVar     = "#301"   // Fusion 360 Design File Name. Defined at the beginning and does not change
+var programNameVar    = "#302"   // Fusion 360 Program Name/Number as specified in the Post Window
+var programCommentVar = "#303"   // Fusion 360 Program comment as specified in the Post Window
+var setupNameVar      = "#304"   // Fusion 360 Setup Name. Changes for each Setup in the Post
+var setupNotesVar     = "#305"   // Fusion 360 Setup Notes. Changes for each Setup in the Post
+var toolPathNameVar   = "#306"   // Fusion 360 Tool Path Name. Changes for every new Tool Path
+var toolPathNotesVar  = "#307"   // Fusion 360 Tool Path Notes. Changes for every new Tool Path
 // Tool Info from the Fusion 360 Tool Library. Updated before each Tool Change in the Post
 var toolTypeVar       = "#308"   // Tool Type 
 var toolUnitVar       = "#309"   // Tool Unit (mm or in) 
@@ -222,7 +222,7 @@ function writeBlock() {
   }
 }
 
-//Writes Blocks preceded with a "/" so they can be skipped during execution if wanted -swissi/FRANCO 
+//Writes Blocks preceded with a "/" so they can be skipped during execution if wanted -swissi
 function writeBlockSkip() {	
     if (properties.showSequenceNumbers) {
       writeWords2("/", nFormat.format(sequenceNumber), arguments);
@@ -245,7 +245,7 @@ function writeComment(text) {
 }
 
 function onOpen() {
-  if (properties.addDebugInfo) {  //Activates Debug Mode. -swissi/FRANCO
+  if (properties.addDebugInfo) {  //Activates Debug Mode. -swissi
     setWriteInvocations(true);
     setWriteStack(false);
     writeln("!DEBUG: onOpen()")
@@ -255,8 +255,8 @@ function onOpen() {
     maximumCircularSweep = toRad(90); // avoid potential center calculation errors for CNC
   }
 
-  //Check for duplicate Tool Numbers -swissi
-  if (true) {  // set to true to check for duplicate tool numbers w/different cutter geometry 
+  //Check for duplicate Tool Numbers with different cutter geometry-swissi
+  if (true) { 
     for (var i = 0; i < getNumberOfSections(); ++i) { 
       var sectioni = getSection(i); 
       var tooli = sectioni.getTool(); 
@@ -518,19 +518,6 @@ function onOpen() {
     } 
   }
 
-  /*/Add a user defined command to the start of the job file -swissi
-  //If the command does not start with a gG or mM and the 2nd character is not a number, the command will be added as a comment
-  if (properties.addCommandBegin != "") { 
-    var addCom1 = properties.addCommandBegin.charAt(0);
-    var addCom2 = properties.addCommandBegin.charAt(1);   
-    if ((addCom1.toUpperCase() == "G" || addCom1.toUpperCase() == "M") && !isNaN(addCom2)) { 
-      writeBlock(properties.addCommandBegin);
-    } else {
-      writeComment(properties.addCommandBegin);
-    }    
-  } 
-  */
-
   if ((getNumberOfSections() > 0) && (getSection(0).workOffset == 0)) {
     for (var i = 0; i < getNumberOfSections(); ++i) {
       if (getSection(i).workOffset > 0) {
@@ -578,7 +565,7 @@ function forceAny() {
   feedOutput.reset();
 }
 
-//Posts Fusion 360 Parameter Info into CNC12 User-String-Variables -swissi
+//Support for Manual NC Commands Display Message, Call Program and Comment -swissi
 function onParameter(name, value) {
   if (properties.writeCNC12Vars) {
     switch (name) {
@@ -587,17 +574,12 @@ function onParameter(name, value) {
         break;
 
       case "call-subprogram":
-        writeBlock(mFormat.format(96) + "\"" + value + "\"");
+        writeBlock(mFormat.format(98) + " \"" + value + "\"");
         break;
 
       case "operation-comment":
         writeComment(value);
         break;  
-
-      //case "document-path":
-      //  writeBlock(designNameVar + " = " + "\"" + value + "\"" + "   ; Fusion 360 Design File Name");
-      //  break;
-
     }
   } else {
 
@@ -613,7 +595,7 @@ function onParameter(name, value) {
   }
 }
 
-//Allows to define lines of codes in Fusion360 and pass them unchanged trough the Post Processor into the Job File -swissi
+//Support for Manual NC Command Pass through -swissi
 function onPassThrough(text) {
   writeBlock(text);
 }
@@ -861,13 +843,6 @@ function onSection() {
         writeBlock(feedPerRevVar + " = \"" + comment + "\"" + "   ; Feed per Revolution");
       }   
     }
-    /*
-    if (hasParameter("operation:view_origin_boxPoint") && setupOriginVar != "" ) {
-      var comment = getParameter("operation:view_origin_boxPoint");
-      if (comment) {
-        writeBlock(setupOriginVar + " = \"" + comment + "\"" + "   ; Origin Position");
-      }   
-    }*/
     if (setupOriginVar != "" ) {
       if (hasParameter("stock-lower-x")) {
         var lower_x = xyzFormat.format(getParameter("stock-lower-x"));
@@ -1020,6 +995,7 @@ function onSection() {
     writeBlock(
       sOutput.format(spindleSpeed), mFormat.format(tool.clockwise ? 3 : 4)
     );
+    
     //Adds a Dwell command after each Spindle Start if Property is selected -swissi
     if (properties.dwellFactor > 0) { 
         var dwellTime = tool.spindleRPM /1000 * (properties.dwellFactor / 100);  //dwell calculated based on spindle speed
