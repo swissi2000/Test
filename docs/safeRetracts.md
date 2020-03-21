@@ -15,7 +15,7 @@ Possible options are:
 
 
 ## Implementation Details
-The default value is *G28*. If *No Move* is selected, the Z-Axis will retract at the last X and Y position of the job.
+The default value is *G28*. If *Clearance Height* is selected, the Z-Axis will retract to the Clearance Height set in Fusion 360.
 
 The coordinates of the *G28* and *G30* commands can be configured in CNC12 under *Setup[F1]->Part[F1]->WCS Table[F9]->Return[F1]*
 
@@ -25,7 +25,6 @@ The default values in CNC12 for *G28* and *G30* for all axis is *0*, so by defau
 
 Choose one of the available Return-Options and modify the return coordinates in CNC12 as required.
 
-Note that the retract position of the Z Axis at the end of the job can be configured seperately with 
-* [Z-Position at End of Job](zPosition.md)
+Note that the retract position of the Z Axis at the end of the job can be configured seperately with [Z-Position at End of Job](zPosition.md)
 
 [Back](index.md)
