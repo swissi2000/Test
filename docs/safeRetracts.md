@@ -1,6 +1,6 @@
 # Save Retract Position
 
-![](/images/pp013.PNG)
+![](/images/pp052.PNG)
 
 ## Description
 This Property allows to specify the Retract Position of the Z Axis. 
@@ -13,7 +13,6 @@ Possible options are:
 * G30 P4
 * Clearance Height
 
-![](/images/pp052.PNG)
 
 ## Implementation Details
 The default value is *G28*. If *No Move* is selected, the Z-Axis will retract at the last X and Y position of the job.
