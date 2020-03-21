@@ -9,7 +9,7 @@ Using the Post Processor Properties to write Fusion 360 Information to CNC12 var
 # Added Post Processor Properties
 These are the additional features that that can be activated trough the Post Processor Properties
 
-* NEW in V2 [Safe Retracts](safeRetract.md)
+* NEW in V2 [Safe Retracts](safeRetracts.md)
 * NEW in V2 [Smoothing Profile](smoothingProfile.md)
 * [Add Command to Begin/End of Job](addCommand.md)
 * [Add Debug Information](addDebug.md)
