@@ -9,8 +9,8 @@ Using the Post Processor Properties to write Fusion 360 Information to CNC12 var
 # Added Post Processor Properties
 These are the additional features that that can be activated trough the Post Processor Properties
 
-* NEW in V2 [Safe Retracts](safeRetracts.md)
-* NEW in V2 [Smoothing Profile](smoothingProfile.md)
+* NEW in v2 [Safe Retracts](safeRetracts.md)
+* NEW in v2 [Smoothing Profile](smoothingProfile.md)
 * [Add Command to Begin/End of Job](addCommand.md)
 * [Add Debug Information](addDebug.md)
 * [Check Tool Offset](checkToolOffset.md)
@@ -28,6 +28,7 @@ These are the additional features that that can be activated trough the Post Pro
 # Additional Post Processor Logic
 Additional logic has been added to the Post Processor to support
 
+* NEW in v2 [Using Inverse Time for Rotary Axis](inverseTime.md)
 * [Check for conflicting Tool Numbers (same Number but different Tools)](checkDuplicateTools.md)
 * [Support for Manual NC Commands](manualNC.md)
 

@@ -1,9 +1,9 @@
-# XY-Position at End of Job
+# Save Retract Position
 
 ![](/images/pp013.PNG)
 
 ## Description
-This Property allows to modify the X and Y-Axis return position at the end of a job. 
+This Property allows to specify the Retract Position of the Z Axis. 
 
 Possible options are:
 
@@ -11,7 +11,9 @@ Possible options are:
 * G30
 * G30 P3
 * G30 P4
-* No Move
+* Clearance Height
+
+![](/images/pp052.PNG)
 
 ## Implementation Details
 The default value is *G28*. If *No Move* is selected, the Z-Axis will retract at the last X and Y position of the job.
@@ -20,9 +22,11 @@ The coordinates of the *G28* and *G30* commands can be configured in CNC12 under
 
 ![](/images/pp014.PNG)
 
-The default values in CNC12 for *G28* and *G30* for all axis is *0*, so by default the machine table will return to the *X0 Y0* position at the end of the job.
+The default values in CNC12 for *G28* and *G30* for all axis is *0*, so by default the Z Axis will retract to the machines Z0 Position..
 
 Choose one of the available Return-Options and modify the return coordinates in CNC12 as required.
 
+Note that the retract position of the Z Axis at the end of the job can be configured seperately with 
+* [Z-Position at End of Job](zPosition.md)
 
 [Back](index.md)
