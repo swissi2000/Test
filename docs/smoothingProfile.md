@@ -27,7 +27,7 @@ The default value is *-1*. The following values are supported:
 
 * -1   will use the currently active Smoothing Profile
 * 0    will turn off Smoothing
-* 1-99 to activate that Smoothing Profile
+* 1-99 to activate Smoothing Profile 1-99
 
 The Post Processor will add a *G64* command like this:
 
