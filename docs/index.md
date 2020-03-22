@@ -28,7 +28,7 @@ These are the additional features that that can be activated trough the Post Pro
 # Additional Post Processor Logic
 Additional logic has been added to the Post Processor to support
 
-* NEW in v2 [Using Inverse Time for Rotary Axis](inverseTime.md)
+* NEW in v2 [Using Inverse Time Feedrate for Rotary Axis](inverseTime.md)
 * [Check for conflicting Tool Numbers (same Number but different Tools)](checkDuplicateTools.md)
 * [Support for Manual NC Commands](manualNC.md)
 
