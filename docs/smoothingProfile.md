@@ -3,9 +3,12 @@
 ![](/images/pp053.PNG)
 
 ## Description
-G-Code Smoothing is an algorithm that pre-processes G code and smooths out the G-code geometry ahead of time before handing off the moves to the Control Board. 3D Surfacing and V Carve progranms benefit greatlly from this feature.
+G-Code Smoothing is an algorithm that pre-processes G code and smooths out the G-code geometry ahead of time before handing off the moves to the Control Board. 
+3D Surfacing and V Carve programs benefit greatly from this feature.
 
-CNC12 has 4 built-in, pre-configured Smoothing Profiles available for
+![](/images/pp055.PNG)
+
+CNC12 has 4 built-in, ready to use Smoothing Profiles available for
 
 * Precision Mill
 * Contouring Mill
