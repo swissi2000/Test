@@ -29,5 +29,15 @@ The default value is *-1*. The following values are supported:
 * 0    will turn off Smoothing
 * 1-99 to activate that Smoothing Profile
 
+The Post Processor will add a *G64* command like this:
+
+```python
+.
+N65 G64 ON P4.
+.
+```
+
+Consult the Centroid CNC12 Mill Operators Manual for more details on the G64 parameters.
+
 
 [Back](index.md)
