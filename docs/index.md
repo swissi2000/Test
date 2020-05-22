@@ -6,8 +6,11 @@ Using the Post Processor Properties to write Fusion 360 Information to CNC12 var
 
 **Please report issues as such in GitHub. No Warranties are given. Use at your own risk!**
 
+# Added Features in V3
+* NEW in v3 [Fusion 360 Probing Support](probing.md)
+
 # Added Post Processor Properties
-These are the additional features that that can be activated trough the Post Processor Properties
+These are the additional features that can be activated trough the Post Processor Properties
 
 * NEW in v2 [Safe Retracts](safeRetracts.md)
 * NEW in v2 [Smoothing Profile](smoothingProfile.md)
