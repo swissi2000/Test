@@ -1,6 +1,6 @@
 # Fusion 360 Probing
 
-![](/images/pp002.PNG)
+![](/images/fp001.PNG)
 
 ## Description
 This allows to add one M Command (CNC12 accepts only one M Command per block/line) or multiple G Commands.
