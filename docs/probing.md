@@ -3,7 +3,12 @@
 ![](/images/fp001.PNG)
 
 ## Description
-This allows to add one M Command (CNC12 accepts only one M Command per block/line) or multiple G Commands.
+Fusion 360 has now the capability to add WCS and Geometry Probing cycles directly into your program together with the Tool Path operations.
+
+This guide does not cover how to use the Fusion 360 probing cycles and just goes into details how the different options that are available within the Probing Cycles do effect the Centroid specific implementation of the probing functionality.
+If you are unfamiliar with the Fusion 360 probing functionality, there's plenty of information on the Internet. Here are just a few examples:
+
+[Fusion 360 Probing Lesson](https://youtu.be/CGCSAOqCFjM) 
 
 ## Implementation Details
 The text entered in this property field must start with a M or a G followed by a number. If this is not the case, the text will be added to the job file as a comment. So this property does allow to add a comment to the job file at the beginning and the end instead of a command.
