@@ -3,12 +3,15 @@
 ![](/images/fp001.PNG)
 
 ## Description
-Fusion 360 has now the capability to add WCS and Geometry Probing cycles directly into your program together with the Tool Path operations.
+Fusion 360 has the capability to add WCS and Geometry Probing cycles directly into your program together with the Tool Path operations. 
+WCS Probing routines can be used to speed up or even automate robust stock setups while Geometry Probing routines can be used to check features for position and size tolerance and automatically adjust tool diameters and tool offset heights for tool wear.
 
 This guide does not cover how to use the Fusion 360 probing cycles and just goes into details how the different options that are available within the Probing Cycles do effect the Centroid specific implementation of the probing functionality.
 If you are unfamiliar with the Fusion 360 probing functionality, there's plenty of information on the Internet. Here are just a few examples:
 
 [Fusion 360 Probing Lesson](https://youtu.be/CGCSAOqCFjM) 
+[WCS Stock Probing Tutorial](https://youtu.be/STJ_m2lTEZ8)
+[WCS Probing for robust Setups](https://youtu.be/vZnPwe3ZqwE)
 
 ## Implementation Details
 The text entered in this property field must start with a M or a G followed by a number. If this is not the case, the text will be added to the job file as a comment. So this property does allow to add a comment to the job file at the beginning and the end instead of a command.
