@@ -41,82 +41,33 @@ Contact me if you are interested in these probing routines.
 ## Supported Probing Cycles
 The following WCS and Geometry Probing Cycles are supported:
 
-* [Single Surface Probing XYZ](ProbeSingleSurface.md)
-* [Wall/Web Probing XY](ProbeWall.md)
-* [Channel/Slot Probing XY](ProbeChannel.md)
-* [Circular Boss Probing XY](ProbeCircularBoss.md)
-* [Circular Hole Probing XY](ProbeCircularHole.md)
-* [Rectangular Boss Probing XY](ProbeRectangularBoss.md)
-* [Rectangular Hole Probing XY](ProbeRectangularHole.md)
-* [Inner Corner Probing XY](ProbeInnerCorner.md)
-* [Outer Corner Probing XY](ProbeOuterCorner.md)
-* [Plane Angle Probing XY](ProbeAngle.md)
+* [Single Surface Probing XYZ (P9811)](ProbeSingleSurface.md)
+* [Wall/Web Probing XY (P9812)](ProbeWall.md)
+* [Channel/Slot Probing XY (P9813)](ProbeChannel.md)
+* [Circular Boss Probing XY (P9814)](ProbeCircularBoss.md)
+* [Circular Hole Probing XY (P9817)](ProbeCircularHole.md)
+* [Rectangular Boss Probing XY (P9812 C1)](ProbeRectangularBoss.md)
+* [Rectangular Hole Probing XY (P9813 C1)](ProbeRectangularHole.md)
+* [Inner Corner Probing XY (P9815)](ProbeInnerCorner.md)
+* [Outer Corner Probing XY (P9816)](ProbeOuterCorner.md)
+* [Plane Angle Probing XY (P9843)](ProbeAngle.md)
 
-### Display a Message
-Display a message on the monitor by adding 
-```
-M200 "Ready to start the Job?\n\nPress Cycle Start to continue\nRESET to Cancel"
-```
+## Special Probing Functions
+In addition to the probing cycle sub-programs above, there are these supporting sub-programs:
 
-![](/images/pp003.PNG)
+* [Protected Probe Move (P9810)](ProbeProtectedMove.md)
+* [Probe Start/Initialize (P9832)](ProbeInitialize.md)
+* [Probe Stop (P9833)](ProbeStop.md)
 
-This provides additional machine protection by giving a chance to cancel the Job if *Cycle Start* has been pressed by accident.
+## Reporting/Print Function
+The WCS as well as the Geometry Probing Cycles do have a reporting function to record/print probing results to a log file.
 
-### Execute a Macro
-There are several options to execute a Macro. An easy way is to use one of the available *mfuncxx.mac* files like *mfunc51.mac* and *mfunc52.mac* to execute multiple Commands. A simple *M51* or *M52* command can then be entered in the Property field to have the macro executed.
+See [Reporting/Print Function](ProbeReporting.md) for more details.  
 
-Another option is to use a M98 command to call a subprogramm/macro like this:
+## Probing Cuctomization
+Many aspects of the probing cycles can be customized.
 
-```
-M98 "C:\cncm\ncfiles\begin.cnc"
-M98 "C:\cncm\ncfiles\end.cnc"
-```
-In combination with the [Property: Write CNC12 Info Variables](CNC12.md), there are very creative ways to make use of this functionality. To get some ideas, look at the following example.
-
-### Usage Example
-This example will display an Information Screen at the start of a job file and will record the Date, Time, Run-Time-Length as well as the Name and Version Number of the Fusion 360 CAM File the job was created with, to a log file. The log file does have the same name as the job but with a .log extension and will be in the same directory as the job file. Modify the scripts to your needs.
-
-Set the following Properties in the Post Processor:
-
-```
-Property: Add Command to Begin of Job = M98 "C:\cncm\ncfiles\begin.cnc"
-Property: Add Command to End of Job   = M98 "C:\cncm\ncfiles\end.cnc"
-Property: Write CNC12 Info Variables  = Yes
-```
-Get the files *begin.cnc* and *end.cnc* from the [Repository](https://github.com/swissi2000/Test) and copy them to the *C:\cncm\ncfiles* folder.
-
-When running a job in CNC12 that was created with these Property settings, CNC12 will present an Info Message when the *Cycle Start* button is pressed:
-
-![](/images/pp004.PNG)
-
-The Info Message does give the following information:
-
-* Fusion 360 CAM File Name
-* Program Name
-* Program Comment
-* Setup Name
-* Setup Notes if any where entered
-* Origin Point (Part Zero) in relation to Stock Coordinates
-* WCS
-* List of Tools used in the Job (limited to first 10 Tools)
-
-The log file 1001.log will look like this:
-
-```
-1001.log
-
-    Run Date: Sat May 11 10:05:34 2019
-    Based on CAM File: Lift Plate v10
-    Run Time:  0:06:15
-
-    Run Date: Sat May 18 11:30:59 2019
-    Based on CAM File: Lift Plate v11
-    Run Time:  0:04:23
-
-```    
-
-Goto [Property: Write CNC12 Info Variables](CNC12.md) for more details about what Fusion 360 information will be available in CNC12. 
-Also check out the chapter [Support for Manual NC Commands](manualNC.md) for more options to inject commands into a job file.
+See [Probing Customization](ProbeCustomization.md) for all the possible configuration options.
 
 
 [Back](index.md)
