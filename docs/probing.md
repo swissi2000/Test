@@ -16,9 +16,9 @@ If you are unfamiliar with the Fusion 360 probing functionality, there's plenty 
 * [WCS Probing for robust Setups](https://youtu.be/vZnPwe3ZqwE)
 
 ## Implementation Details
-One requirement for the Fusion 360 Probingg functions to work is that the Post Processor needs to support the Probing Functionality but that's just the easy part. 
-Looking at the output the post processor generates for the probing routines reveals the more difficult part. The probing command blocks created bt the post processor are just subprogram calls that don't exist for the Centroid Acorn board.
-Here's an example of those generated blocks:
+One requirement for the Fusion 360 Probing functions to work is that the Post Processor needs to support the Probing Functionality but that's just the easy part. 
+Looking at the output the post processor generates for the probing routines reveals the more difficult part.
+Here's an example of the generated blocks:
 
 ```
 (PROBE WCS Y-SURFACE)
@@ -35,9 +35,24 @@ N75 G65 P9810 Z5.
 N80 G00 Z15.
 N85 G65 P9833
 ```
+
+As seen in the example above, the probing commands are just subprogram calls in the form of P98xx with a bunch of parameters and these subprogram don't exist for the Centroid Acorn board.
+I took on the challange to write probing cycles to fully implement the functionality of the Fusion 360 WCS and Geometry probing cycles supporting all available options.
+Contact me if you are interested in these probing routines.
  
-## Use Cases
-This feature does give a lot of flexibility of how to use it. These are just a couple of options:
+## Supported Probing Cycles
+The following WCS and Geometry Probing Cycles are supported:
+
+[Single Surface Probing XYZ](ProbeSingleSurface.md)
+[Wall/Web Probing XY](ProbeWall.md)
+[Channel/Slot Probing XY](ProbeChannel.md)
+[Circular Boss Probing XY](ProbeCircularBoss.md)
+[Circular Hole Probing XY](ProbeCircularHole.md)
+[Rectangular Boss Probing XY](ProbeRectangularBoss.md)
+[Rectangular Hole Probing XY](ProbeRectangularHole.md)
+[Inner Corner Probing XY](ProbeInnerCorner.md)
+[Outer Corner Probing XY](ProbeOuterCorner.md)
+[Plane Angle Probing XY](ProbeAngle.md)
 
 ### Display a Message
 Display a message on the monitor by adding 
