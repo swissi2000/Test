@@ -10,9 +10,7 @@ This guide does not cover how to use the Fusion 360 probing cycles and just goes
 If you are unfamiliar with the Fusion 360 probing functionality, there's plenty of information on the Internet. Here are just a few examples:
 
 * [Fusion 360 Probing Lesson](https://youtu.be/CGCSAOqCFjM) 
-
 * [WCS Stock Probing Tutorial](https://youtu.be/STJ_m2lTEZ8)
-
 * [WCS Probing for robust Setups](https://youtu.be/vZnPwe3ZqwE)
 
 ## Implementation Details
@@ -43,25 +41,16 @@ Contact me if you are interested in these probing routines.
 ## Supported Probing Cycles
 The following WCS and Geometry Probing Cycles are supported:
 
-[Single Surface Probing XYZ](ProbeSingleSurface.md)
-
-[Wall/Web Probing XY](ProbeWall.md)
-
-[Channel/Slot Probing XY](ProbeChannel.md)
-
-[Circular Boss Probing XY](ProbeCircularBoss.md)
-
-[Circular Hole Probing XY](ProbeCircularHole.md)
-
-[Rectangular Boss Probing XY](ProbeRectangularBoss.md)
-
-[Rectangular Hole Probing XY](ProbeRectangularHole.md)
-
-[Inner Corner Probing XY](ProbeInnerCorner.md)
-
-[Outer Corner Probing XY](ProbeOuterCorner.md)
-
-[Plane Angle Probing XY](ProbeAngle.md)
+* [Single Surface Probing XYZ](ProbeSingleSurface.md)
+* [Wall/Web Probing XY](ProbeWall.md)
+* [Channel/Slot Probing XY](ProbeChannel.md)
+* [Circular Boss Probing XY](ProbeCircularBoss.md)
+* [Circular Hole Probing XY](ProbeCircularHole.md)
+* [Rectangular Boss Probing XY](ProbeRectangularBoss.md)
+* [Rectangular Hole Probing XY](ProbeRectangularHole.md)
+* [Inner Corner Probing XY](ProbeInnerCorner.md)
+* [Outer Corner Probing XY](ProbeOuterCorner.md)
+* [Plane Angle Probing XY](ProbeAngle.md)
 
 ### Display a Message
 Display a message on the monitor by adding 
