@@ -16,10 +16,26 @@ If you are unfamiliar with the Fusion 360 probing functionality, there's plenty 
 * [WCS Probing for robust Setups](https://youtu.be/vZnPwe3ZqwE)
 
 ## Implementation Details
-The text entered in this property field must start with a M or a G followed by a number. If this is not the case, the text will be added to the job file as a comment. So this property does allow to add a comment to the job file at the beginning and the end instead of a command.
+One requirement for the Fusion 360 Probingg functions to work is that the Post Processor needs to support the Probing Functionality but that's just the easy part. 
+Looking at the output the post processor generates for the probing routines reveals the more difficult part. The probing command blocks created bt the post processor are just subprogram calls that don't exist for the Centroid Acorn board.
+Here's an example of those generated blocks:
 
-If the entered text does start with a M or G followed by a number, the whole line will be written as a block/line to the job file without further syntax check. If the string does contain something CNC12 doesn't like, CNC12 will stop the execution of the job file with an error message, so be careful that the command string is valid.
-
+```
+(PROBE WCS Y-SURFACE)
+N30 T10 M06
+N35 G54
+N40 G00 A0.
+N45 G00 X9.117 Y-5.5
+N50 G43 Z15. H10
+N55 G65 P9832
+N60 G65 P9810 Z5. F1000.
+N65 G65 P9810 Z-12.
+N70 G65 P9811 Y0. Q2. M1. W1. S1.
+N75 G65 P9810 Z5.
+N80 G00 Z15.
+N85 G65 P9833
+```
+ 
 ## Use Cases
 This feature does give a lot of flexibility of how to use it. These are just a couple of options:
 
