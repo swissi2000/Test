@@ -9,6 +9,7 @@ Measures the exact position of a X-, Y- or Z-Surface.
 
 
 ## WCS Probing Cycle
+A typical block for a Single Surface Probing Cycle looks like this:
 
 ```javascript
 G65 P9811 A1 X5. Q2. M1. W1. S1
