@@ -33,6 +33,11 @@ This parameter defines the position error the surface is allowed to have and wor
 Possible values are W1 and W2 where W1 just increments the "*Feature*" number while W2 does increment the "*Component*" number and resets the "*Feature*" number to 1.
 See [Print Results](ProbePrintResults.md) for more details.
 
+### Parameter S: WCS #
+Defines the WCS # that will be reset by this probing cycle. 
+By default this is the currently active, driving WCS and can be changed in the "*Actions*" tab with the "*Overwrite Driving WCS*" check box. 
+Note that the Free version of CNC12 only supports WCS #1 (G54), Mill Pro supports WCS # 1-6 (G54 - G59) and Mill Digitizing Bundle supports WCS #1-18 (G54 - G59 and E7 - E18).
+
 
 
 [*Use Browser Back Button to Return*]
