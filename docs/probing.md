@@ -18,7 +18,7 @@ One requirement for the Fusion 360 Probing functions to work is that the Post Pr
 Looking at the output the post processor generates for the probing routines reveals the more difficult part.
 Here's an example of the generated blocks:
 
-```
+```javascript
 (PROBE WCS Y-SURFACE)
 N30 T10 M06
 N35 G54
