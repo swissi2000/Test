@@ -1,17 +1,14 @@
 # Fusion 360 Probing Cycle: Single Surface XYZ 
 
+
+![](/images/fp002.PNG)
+
+
 ## Description
 Measures the exact position of a X-, Y- or Z-Surface.
 
-User-String-Variable #303 holds the Fusion 360 Program Comment from the Post Processor window. 
 
-These variables are defined at the beginning of the job file and do not change during job execution.
 
-This is an example of a #302 and #303 information string:
-
-```javascript
-#302 = "1001"    ; Program Name
-#303 = "Program Comment of Program Name 1001"   ; Program Comment
 ```
 
 ## Information Source
