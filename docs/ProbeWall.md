@@ -1,18 +1,18 @@
-# Fusion 360 Probing Cycle: Single Surface XYZ 
+# Fusion 360 Probing Cycle: Wall/Web XY 
 
 
-![](/images/fp002.PNG)
+![](/images/fp003.PNG)
 
 
 ## Description
-Measures the exact position of a X-, Y- or Z-Surface.
+Measures the exact position of the two wall surfaces and positions the probe at the center of the wall at the end of the probing cycle.
 
 
 ## WCS Probing Cycle
-A typical block for a Single Surface WCS Probing Cycle looks like this:
+A typical block for a Wall/Web WCS Probing Cycle looks like this:
 
 ```javascript
-G65 P9811 A1 X5. Q2. M1. W1. S1
+G65 P9812 A2 Y30. Z-2.5 Q2. R3. H0.2 M0.1 W1. S1
 ```
 ### Parameter A: Axis Index
 Parameter A is the Axis Index where Axis X=1, Y=2 and Z=3, so A1 in the example above indicates a probing move allong the X-Axis.
