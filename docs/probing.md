@@ -41,16 +41,16 @@ Contact me if you are interested in these probing routines.
 ## Supported Probing Cycles
 The following WCS and Geometry Probing Cycles are supported:
 
-* [Single Surface Probing XYZ (P9811)](ProbeSingleSurface.md)
-* [Wall/Web Probing XY (P9812)](ProbeWall.md)
-* [Channel/Slot Probing XY (P9813)](ProbeChannel.md)
-* [Circular Boss Probing XY (P9814)](ProbeCircularBoss.md)
-* [Circular Hole Probing XY (P9817)](ProbeCircularHole.md)
-* [Rectangular Boss Probing XY (P9812 C1)](ProbeRectangularBoss.md)
-* [Rectangular Hole Probing XY (P9813 C1)](ProbeRectangularHole.md)
-* [Inner Corner Probing XY (P9815)](ProbeInnerCorner.md)
-* [Outer Corner Probing XY (P9816)](ProbeOuterCorner.md)
-* [Plane Angle Probing XY (P9843)](ProbeAngle.md)
+* [Single Surface XYZ (P9811)](ProbeSingleSurface.md)
+* [Wall/Web XY (P9812)](ProbeWall.md)
+* [Channel/Slot XY (P9813)](ProbeChannel.md)
+* [Circular Boss XY (P9814)](ProbeCircularBoss.md)
+* [Circular Hole XY (P9817)](ProbeCircularHole.md)
+* [Rectangular Boss XY (P9812 C1)](ProbeRectangularBoss.md)
+* [Rectangular Hole XY (P9813 C1)](ProbeRectangularHole.md)
+* [Inner Corner XY (P9815)](ProbeInnerCorner.md)
+* [Outer Corner XY (P9816)](ProbeOuterCorner.md)
+* [Plane Angle XY (P9843)](ProbeAngle.md)
 
 ## Special Probing Functions
 In addition to the probing cycle sub-programs above, there are these supporting sub-programs:
