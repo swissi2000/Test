@@ -1,16 +1,16 @@
-# Fusion 360 Probing Cycle: Surface Angle XY 
+# Fusion 360 Probing Cycle: Plane Angle XY 
 
 
 ![](/images/fp011.PNG)
 
 
 ## Description
-Measures two points on a surface and calculates the surface angle. 
-While the WCS Surface Angle probing cycle can be used to automatically set Cordinate System Rotation (CSR), it is important to know that the CNC12 probing commands do ignore CSR angles. 
+Measures two points on a plane and calculates the plane angle. 
+While the WCS Plane Angle probing cycle can be used to automatically set Cordinate System Rotation (CSR), it is important to know that the CNC12 probing commands do ignore CSR angles. 
 All probing moves always go straight along the physical X and Y axes so executing probing moves while CSR is activated can lead to unexpected results.
 
 ## WCS Probing Cycle
-A typical block for a Surface Angle Probing Cycle looks like this:
+A typical block for a Plane Angle Probing Cycle looks like this:
 
 ```javascript
 G65 P9843 A2 Y0. D50. Q2. B1. W1. S1
@@ -42,7 +42,7 @@ By default this is the currently active, driving WCS and can be changed in the "
 Note that the Free version of CNC12 only supports WCS #1 (G54), Mill Pro supports WCS # 1-6 (G54 - G59) and Mill Digitizing Bundle supports WCS #1-18 (G54 - G59 and E7 - E18).
 
 ## Geometry Probing Cycle
-A typical block for a Surface Angle Probing Cycle looks like this:
+A typical block for a Plane Angle Probing Cycle looks like this:
 
 ```javascript
  G65 P9843 A2 Y0. D50. Q2. B1. W1.
