@@ -8,6 +8,9 @@
 Measures the exact position of all 4 walls of a rectangular hole and positions the probe at the center of the hole at the end of the probing cycle.
 The probing cycle is the same as the Channel/Slot probing cycle. The parameter C1 indicates to the probing cycle to probe a rectangular hole in the X and Y direction and not just a Channel/Slot.
 
+The probing cycle consists of two probing commands, one to measure in the X direction and one for the Y direction.
+No messages will be displayed or printed until both probing commands have been completed.
+
 ## WCS Probing Cycle
 The two blocks for a Rectangular Hole Probing Cycle look like this:
 
@@ -25,7 +28,7 @@ Parameter A is the Axis Index where Axis X=1, Y=2, so A1 in the example above in
 
 ### Parameter C: Rectangular Hole Indicator
 Parameter C1  indicates to the probing cycle that a rectangular hole needs to be measured and not just a single Channel/Slot. 
-Both Channel/Slot probing cycles in the X and Y direction will be completed before displaying/printing results and setting WCS.
+Both Channel/Slot probing cycles in the X and Y direction will be completed before displaying/printing results.
 
 ### Parameter Z: Probing Height
 Sets the Z-Position for the probe to drop down to to measure the Rectangular Hole surfaces. 
