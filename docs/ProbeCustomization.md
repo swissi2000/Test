@@ -44,18 +44,21 @@ This parameter allows to configure the preferred probing sequence.
 
 Options are:
 
-*0 = (Default) Fast probing move first followed by a slow probing move
-*1 = Slow probing move only
+```
+0 = (Default) Fast probing move first followed by a slow probing move
+1 = Slow probing move only
+```
 
 ### Display WCS Measurements (#33997)
 This parameter allows to customize the way WCS Measurements are displayed before WCS is set.
 
 Options are:
 
-*-1 = No display. WCS will be set without showing WCS Measurements
-*0  = (Default) WCS Measurements are displayed and need to be confirmed with *Cycle Start* 
-*>0 = A value larger than 0 will indicate the number of seconds the WCS Measurements will be displayed before automatic continuation
-
+```
+-1 = No display. WCS will be set without showing WCS Measurements
+0  = (Default) WCS Measurements are displayed and need to be confirmed with *Cycle Start* 
+>0 = A value larger than 0 will indicate the number of seconds the WCS Measurements will be displayed before automatic continuation
+```
 
 
 [*Use Browser Back Button to Return*]

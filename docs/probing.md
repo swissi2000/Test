@@ -113,7 +113,7 @@ ANGLE SURFACE-X DEG 0  ACTUAL -0.474  DEV -0.474  TOL 1.000  PASSED
 ANGLE SURFACE-Y DEG 0  ACTUAL 0.413  DEV 0.413  TOL 1.000  PASSED
 ```
 Note that the "*Component No*" is stored in the non-volatile variable #155 by default (can be changed in the configuration parameters) and will keep the value between CNC12 sessions. 
-Everytime the check box "*Increment Component*" in the Action Tab of the Fusion 360 Probing Cycle Setup is checked, the Component No will be incremented and the Feature No resetted to 1.
+Everytime the check box "*Increment Component*" in the Action Tab of the Fusion 360 Probing Cycle Setup is checked, the Component No will be incremented and the Feature No reset to 1.
 
 ![](/images/fp032.PNG)
 
