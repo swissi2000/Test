@@ -60,9 +60,58 @@ In addition to the probing cycle sub-programs above, there are these supporting 
 * [Probe Stop (P9833)](ProbeStop.md)
 
 ## Reporting/Print Function
-The WCS as well as the Geometry Probing Cycles do have a reporting function to record/print probing results to a log file.
+The WCS as well as the Geometry Probing Cycles do have a reporting function to record/print probing results to a log file. 
+The name of the log file can be configured in the parameter configuration file (See [Probing Customization](ProbeCustomization.md) for details.)
 
-See [Reporting/Print Function](ProbeReporting.md) for more details.  
+Here's an example of the information recorded by the Print Function:
+
+```javascript
+------------------------------------------------------------
+Log Date: Mon May  4 13:43:23 2020
+------------------------------------------------------------
+ COMPONENT NO 1                          FEATURE NO 1
+------------------------------------------------------------
+WORK OFFSET #1  SURFACE Y
+POS Y0.000  ACTUAL 0.003  DEV 0.003  TOL 1.000
+
+    +++++WCS #1 POS Y0.003 UPDATED TO Y0.000+++++
+
+------------------------------------------------------------
+ COMPONENT NO 1                          FEATURE NO 2
+------------------------------------------------------------
+WORK OFFSET #1  SURFACE X
+POS X0.000  ACTUAL -0.005  DEV -0.005  TOL 1.000
+
+    +++++WCS #1 POS X-0.005 UPDATED TO X0.000+++++
+
+------------------------------------------------------------
+ COMPONENT NO 1                          FEATURE NO 3
+------------------------------------------------------------
+WORK OFFSET #1  SURFACE Z
+POS Z0.000  ACTUAL 0.006  DEV 0.006  TOL 1.000
+
+    +++++WCS #1 POS Z0.006 UPDATED TO Z0.000+++++
+
+------------------------------------------------------------
+ COMPONENT NO 1                          FEATURE NO 4
+------------------------------------------------------------
+GEOMETRY  XY OUTER CORNER
+CORNER POS-X 5.000  ACTUAL 4.869  DEV -0.131  TOL 0.500  PASSED
+CORNER POS-Y 5.000  ACTUAL 4.841  DEV -0.159  TOL 0.500  PASSED
+ANGLE SURFACE-X DEG 0  ACTUAL 0.145  DEV 0.145  TOL 1.000  PASSED
+ANGLE SURFACE-Y DEG 0  ACTUAL 0.111  DEV 0.111  TOL 1.000  PASSED
+------------------------------------------------------------
+ COMPONENT NO 1                          FEATURE NO 5
+------------------------------------------------------------
+GEOMETRY  XY INNER CORNER
+CORNER POS-X 130.000  ACTUAL 129.632  DEV -0.368  TOL 0.500  PASSED
+CORNER POS-Y 15.000  ACTUAL 14.458  DEV -0.542  TOL 0.500   
+
+    +++++WCS Y POS OUT OF TOLERANCE+++++ERROR -0.042
+
+ANGLE SURFACE-X DEG 0  ACTUAL -0.474  DEV -0.474  TOL 1.000  PASSED
+ANGLE SURFACE-Y DEG 0  ACTUAL 0.413  DEV 0.413  TOL 1.000  PASSED
+```
 
 ## Probing Cuctomization
 Many aspects of the probing cycles can be customized.
