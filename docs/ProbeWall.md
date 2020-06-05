@@ -9,6 +9,9 @@ Measures the exact position of the two wall surfaces and positions the probe at 
 
 
 ## WCS Probing Cycle
+
+![](/images/fp014.PNG)
+
 A typical block for a Wall/Web WCS Probing Cycle looks like this:
 
 ```javascript
@@ -47,6 +50,9 @@ By default this is the currently active, driving WCS and can be changed in the "
 Note that the Free version of CNC12 only supports WCS #1 (G54), Mill Pro supports WCS # 1-6 (G54 - G59) and Mill Digitizing Bundle supports WCS #1-18 (G54 - G59 and E7 - E18).
 
 ## Geometry Probing Cycle
+
+![](/images/fp015.PNG)
+
 A typical block for a Wall/Web Geometry Probing Cycle looks like this:
 
 ```javascript

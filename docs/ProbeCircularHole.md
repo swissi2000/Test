@@ -8,6 +8,9 @@
 Finds the exact center position of a circular hole and positions the probe at the center of the hole at the end of the probing cycle.
 
 ## WCS Probing Cycle
+
+![](/images/fp020.PNG)
+
 A typical block for a Circular Hole WCS Probing Cycle looks like this:
 
 ```javascript
@@ -48,6 +51,9 @@ By default this is the currently active, driving WCS and can be changed in the "
 Note that the Free version of CNC12 only supports WCS #1 (G54), Mill Pro supports WCS # 1-6 (G54 - G59) and Mill Digitizing Bundle supports WCS #1-18 (G54 - G59 and E7 - E18).
 
 ## Geometry Probing Cycle
+
+![](/images/fp021.PNG)
+
 A typical block for a Circular Hole Geometry Probing Cycle looks like this:
 
 ```javascript

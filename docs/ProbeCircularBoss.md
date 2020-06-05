@@ -8,6 +8,9 @@
 Finds the exact center position of a circular boss and positions the probe at the center of the boss at the end of the probing cycle.
 
 ## WCS Probing Cycle
+
+![](/images/fp018.PNG)
+
 A typical block for a Circular Boss WCS Probing Cycle looks like this:
 
 ```javascript
@@ -42,6 +45,9 @@ By default this is the currently active, driving WCS and can be changed in the "
 Note that the Free version of CNC12 only supports WCS #1 (G54), Mill Pro supports WCS # 1-6 (G54 - G59) and Mill Digitizing Bundle supports WCS #1-18 (G54 - G59 and E7 - E18).
 
 ## Geometry Probing Cycle
+
+![](/images/fp019.PNG)
+
 A typical block for a Channel/Slot Geometry Probing Cycle looks like this:
 
 ```javascript

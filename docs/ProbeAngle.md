@@ -10,6 +10,9 @@ While the WCS Plane Angle probing cycle can be used to automatically set Cordina
 All probing moves always go straight along the physical X and Y axes so executing probing moves while CSR is activated can lead to unexpected results.
 
 ## WCS Probing Cycle
+
+![](/images/fp030.PNG)
+
 A typical block for a Plane Angle Probing Cycle looks like this:
 
 ```javascript
@@ -42,6 +45,9 @@ By default this is the currently active, driving WCS and can be changed in the "
 Note that the Free version of CNC12 only supports WCS #1 (G54), Mill Pro supports WCS # 1-6 (G54 - G59) and Mill Digitizing Bundle supports WCS #1-18 (G54 - G59 and E7 - E18).
 
 ## Geometry Probing Cycle
+
+![](/images/fp031.PNG)
+
 A typical block for a Plane Angle Probing Cycle looks like this:
 
 ```javascript

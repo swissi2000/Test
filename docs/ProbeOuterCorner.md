@@ -9,6 +9,9 @@ Calculates the exact corner position by measuring two points on each of the two 
 Based on the two measurements on each corner surface, the angle of the surface as well as the crossing point of the two vectors can be calculates to determine the exact corner point. 
 
 ## WCS Probing Cycle
+
+![](/images/fp028.PNG)
+
 A typical block for a Outer Corner Probing Cycle looks like this:
 
 ```javascript
@@ -41,6 +44,9 @@ By default this is the currently active, driving WCS and can be changed in the "
 Note that the Free version of CNC12 only supports WCS #1 (G54), Mill Pro supports WCS # 1-6 (G54 - G59) and Mill Digitizing Bundle supports WCS #1-18 (G54 - G59 and E7 - E18).
 
 ## Geometry Probing Cycle
+
+![](/images/fp029.PNG)
+
 A typical block for a Inner Corner Probing Cycle looks like this:
 
 ```javascript
