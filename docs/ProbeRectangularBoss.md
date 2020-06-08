@@ -12,6 +12,9 @@ The probing cycle consists of two probing commands, one to measure in the X dire
 No messages will be displayed or printed until both probing commands have been completed.
 
 ## WCS Probing Cycle
+
+![](/images/fp022.PNG)
+
 The two blocks for a Rectangular Boss Probing Cycle look like this:
 
 ```javascript
@@ -55,6 +58,9 @@ By default this is the currently active, driving WCS and can be changed in the "
 Note that the Free version of CNC12 only supports WCS #1 (G54), Mill Pro supports WCS # 1-6 (G54 - G59) and Mill Digitizing Bundle supports WCS #1-18 (G54 - G59 and E7 - E18).
 
 ## Geometry Probing Cycle
+
+![](/images/fp023.PNG)
+
 The two blocks for a Rectangular Boss Probing Cycle look like this:
 
 ```javascript
