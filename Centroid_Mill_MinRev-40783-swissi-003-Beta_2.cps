@@ -10,14 +10,14 @@
   FORKID {A1485ECA-426C-48d3-B1AA-451087E4DD30}
 */
 
-description = "CENTROID Milling swissi-003-Beta_1";
+description = "CENTROID Milling swissi-003-Beta_2";
 vendor = "CENTROID";
 vendorUrl = "http://www.centroidcnc.com";
 legal = "Copyright (C) 2012-2020 by Autodesk, Inc.";
 certificationLevel = 2;
 minimumRevision = 40783;
 
-longDescription = "Centroid Generic Milling Post MinRev 40783-swissi-003-Beta_1";
+longDescription = "Centroid Generic Milling Post MinRev 40783-swissi-003-Beta_2";
 
 extension = "nc";
 programNameIsInteger = false;  //Now selectable trough Properties -swissi
@@ -221,7 +221,7 @@ var gRetractModal = createModal({}, gFormat); // modal group 10 // G98-99
 // fixed settings
 var useMultiAxisFeatures = false;  //03/26/2020 -swissi
 var WARNING_WORK_OFFSET = 0;
-var forceMultiAxisIndexing = false; // force multi-axis indexing for 3D programs ***swissi
+var forceMultiAxisIndexing = false; //06/19/2020 -swissi
 
 var ANGLE_PROBE_NOT_SUPPORTED = 0; //03/26/2020 -swissi
 var ANGLE_PROBE_USE_ROTATION = 1;  //03/26/2020 -swissi
@@ -230,14 +230,16 @@ var ANGLE_PROBE_USE_CAXIS = 2;     //03/26/2020 -swissi
 // collected state
 var sequenceNumber;
 var currentWorkOffset;
-var forceSpindleSpeed = false;  //03/26/2020 -swissi
-var g68RotationMode = 0;        //03/26/2020 -swissi
-var optionalSection = false;    //***swissi
+var forceSpindleSpeed = false;       //03/26/2020 -swissi
+var g68RotationMode = 0;             //03/26/2020 -swissi
+var optionalSection = false;         //06/19/2020 -swissi
+var incrementalMode = false;         //06/19/2020 -swissi
+var cycleSubprogramIsActive = false; //06/19/2020 -swissi
 
 var retracted = false; // specifies that the tool has been retracted to the safe plane
 var zRanges = {}       //Make zRanges public variable -swissi
 
-// Probing
+// Probing 06/19/2020 -swissi
 var probeOutputWorkOffset = 1
 var isFirstProbingMove = true
 var probingCycleFile = "c:\\cncm\\probing\\F_cycles.cnc"
@@ -284,7 +286,7 @@ function onOpen() {
   if (properties.useRadius) {
     maximumCircularSweep = toRad(90); // avoid potential center calculation errors for CNC
   }
-  gRotationModal.format(69); // Default to G69 Rotation Off ***swissi
+  gRotationModal.format(69); // Default to G69 Rotation Off -swissi
   //Check for duplicate Tool Numbers with different cutter geometry-swissi
   if (true) { 
     for (var i = 0; i < getNumberOfSections(); ++i) { 
@@ -891,7 +893,7 @@ function onSection() {
       }   
     }
     if (hasParameter("operation:tool_spindleSpeed") && spindleSpeedVar != "" ) {
-      var comment = getParameter("operation:tool_spindleSpeed");
+      var comment = Math.round(getParameter("operation:tool_spindleSpeed"));
       if (comment) {
         writeBlock(spindleSpeedVar + " = \"" + comment + "\"" + "   ; Spindle Speed");
       }   
@@ -1010,12 +1012,12 @@ function onSection() {
     }    
   } 
   
-  var forceToolAndRetract = optionalSection && !currentSection.isOptional(); //***swissi
-  optionalSection = currentSection.isOptional(); //***swissi
+  var forceToolAndRetract = optionalSection && !currentSection.isOptional(); //06/19/2020 -swissi
+  optionalSection = currentSection.isOptional(); //06/19/2020 -swissi
   
   var insertToolCall = forceToolAndRetract || isFirstSection() ||
     currentSection.getForceToolChange && currentSection.getForceToolChange() ||
-    (tool.number != getPreviousSection().getTool().number); //***swissi
+    (tool.number != getPreviousSection().getTool().number); //06/19/2020 -swissi
   
   retracted = false; // specifies that the tool has been retracted to the safe plane
   var newWorkOffset = isFirstSection() ||
@@ -1139,29 +1141,8 @@ function onSection() {
 
   forceXYZ();
 
-  var abc = defineWorkPlane(currentSection, true); //***swissi
+  var abc = defineWorkPlane(currentSection, true); //06/19/2020 -swissi
 
-  /*
-  if (machineConfiguration.isMultiAxisConfiguration()) { // use 5-axis indexing for multi-axis mode
-    // set working plane after datum shift
-
-    var abc = new Vector(0, 0, 0);
-    if (currentSection.isMultiAxis()) {
-      forceWorkPlane();
-      cancelTransformation();
-    } else {
-      abc = getWorkPlaneMachineABC(currentSection.workPlane);
-    }
-    setWorkPlane(abc);
-  } else { // pure 3D
-    var remaining = currentSection.workPlane;
-    if (!isSameDirection(remaining.forward, new Vector(0, 0, 1))) {
-      error(localize("Tool orientation is not supported."));
-      return;
-    }
-    setRotation(remaining);
-  }
-*/
   // set coolant after we have positioned at Z
   setCoolant(tool.coolant);
 
@@ -1886,16 +1867,7 @@ function onLinear5D(_x, _y, _z, _a, _b, _c, feed) {
     var a = aOutput.format(_a);
     var b = bOutput.format(_b);
     var c = cOutput.format(_c);
-   /* var f = feedOutput.format(feed);
-    if (x || y || z || a || b || c) {
-      writeBlock(gMotionModal.format(1), x, y, z, a, b, c, f);
-    } else if (f) {
-      if (getNextRecord().isMotion()) { // try not to output feed without motion
-        feedOutput.reset(); // force feed on next line
-      } else {
-        writeBlock(gMotionModal.format(1), f);
-      }
-    }*/
+  
     // get feedrate number
     var f = {frn:0, fmode:0};
     if (a || b || c) {
@@ -2557,7 +2529,7 @@ function onClose() {
             case "none": 
             break;			
     }
- 
+  //06/19/2020 -swissi
   if (properties.resetRotary) {
     if (machineConfiguration.isMachineCoordinate(0)) {
       writeBlock(mFormat.format(26) + "/A");
