@@ -3,7 +3,13 @@
 ![](/images/pp056.PNG)
 
 ## Description
-If this Property is checked, the Post Processor will dump the tool diameters from the Fusion 360 Tool Library of all tool being used in the job at the beginning of the job file.
+If Tool Paths are generated in Fusion 360 with the setting **"In Computer"**, the Tool Diameter Offset in the CNC12 Offset Library is not being used during machining operations and is only needed if accurate **Graphing** in CNC12 is desired.
+The draw back of this method is that Tool Wear corrections can't be made on the machine and it is necessary to go back to Fusion 360 to generate new, tool wear adjusted tool paths and then go back to the machine to execute them.
+
+If Tool Paths are generated in Fusion 360 with the setting **"In Control"**, Fusion 360 will generate Tool Paths with Tool Diameter Offsets so it is crucial that the Tool Diameters from the Fusion 360 and CNC12 Tool Library match.
+This method is preferred by the operators who like to adjust for Tool Wear directly at the machine without the need to go back into Fusion 360 to create new tool paths.
+ 
+If this Property is checked, the Post Processor will dump the tool diameters from the Fusion 360 Tool Library of all tools being used in the job at the beginning of the job file.
 CNC12 specific commands will be added that will loop trough all tools comparing the tool diameter from the Fusion 360 Tool Library with the Diameters from the CNC12 Tool Offset Library.
 
 The added code at the beginning of the job file looks like this:
