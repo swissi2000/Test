@@ -10,13 +10,15 @@ Using the Post Processor Properties to write Fusion 360 Information to CNC12 var
 **Please report issues on the [Centroid Forum](https://centroidcncforum.com/viewtopic.php?f=60&t=2992). No Warranties are given. Use at your own risk!**
 
 # Added Features in V3
-* NEW in v3 [Fusion 360 Probing Support](probing.md)
+* NEW in v3: [Fusion 360 Probing Support](probing.md)
 
 # Added Post Processor Properties
 These are the additional features that can be activated trough the Post Processor Properties
 
-* NEW in v2 [Safe Retracts](safeRetracts.md)
-* NEW in v2 [Smoothing Profile](smoothingProfile.md)
+* NEW in v3 [Check/Update CNC12 Tool Library](checkLibrary.md)
+* NEW in v3 [Reset Rotary Axis at End of Job](resetRotary.md)
+* Added in v2: [Safe Retracts](safeRetracts.md)
+* Added in v2: [Smoothing Profile](smoothingProfile.md)
 * [Add Command to Begin/End of Job](addCommand.md)
 * [Add Debug Information](addDebug.md)
 * [Check Tool Offset](checkToolOffset.md)
@@ -34,7 +36,8 @@ These are the additional features that can be activated trough the Post Processo
 # Additional Post Processor Logic
 Additional logic has been added to the Post Processor to support
 
-* NEW in v2 [Using Inverse Time Feedrate for Rotary Axis](inverseTime.md)
+* NEW in v3: Improved Rotary Axis Support 
+* Added in v2: [Using Inverse Time Feedrate for Rotary Axis](inverseTime.md)
 * [Check for conflicting Tool Numbers (same Number but different Tools)](checkDuplicateTools.md)
 * [Support for Manual NC Commands](manualNC.md)
 
