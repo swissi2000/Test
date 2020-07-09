@@ -10,14 +10,14 @@
   FORKID {A1485ECA-426C-48d3-B1AA-451087E4DD30}
 */
 
-description = "CENTROID Milling swissi-003-Beta_2";
+description = "CENTROID Milling swissi-003";
 vendor = "CENTROID";
 vendorUrl = "http://www.centroidcnc.com";
 legal = "Copyright (C) 2012-2020 by Autodesk, Inc.";
 certificationLevel = 2;
 minimumRevision = 40783;
 
-longDescription = "Centroid Generic Milling Post MinRev 40783-swissi-003-Beta_2";
+longDescription = "Centroid Generic Milling Post MinRev 40783-swissi-003";
 
 extension = "nc";
 programNameIsInteger = false;  //Now selectable trough Properties -swissi
@@ -38,7 +38,7 @@ allowedCircularPlanes = undefined; // allow any circular motion
 properties = {
   writeMachine: true, // write machine
   writeTools: true, // writes the tools
-  preloadTool: true, // preloads next tool on tool change if any
+  preloadTool: false, // preloads next tool on tool change if any
   showSequenceNumbers: true, // show sequence numbers
   sequenceNumberStart: 10, // first sequence number
   sequenceNumberIncrement: 5, // increment for sequence numbers
@@ -61,6 +61,7 @@ properties = {
   resetRotary: false, // Reset Rotary Axis at End of Job
   smoothingProfile: -1, // smoothing profile (-1 to use current CNC12 settings, 0 to turn off smoothing, 1-99 to activate that smoothing profile)
   safeRetract: "G28", // specifies the desired safe retract option
+  checkCNC12ToolLibrary: false, // Verifies if the Tool Diameter in the CNC12 Offset Library match the Fusion 360 Tool Library Diameter
   //End Properties added by -swissi
 };
 
@@ -126,7 +127,7 @@ propertyDefinitions = {
        {title:"Along -Z", id:"-c"}     ] },
   resetRotary: {title:"Reset Rotary Axis at End of Job", description:"Reset Rotary Axis at End of Job", type:"boolean"},     
   smoothingProfile: {title:"Smoothing Profile", description:"-1 to use current CNC12 settings, 0 to turn off smoothing, 1-99 to activate that smoothing profile.", type:"integer"},
- 
+  checkCNC12ToolLibrary: {title:"Check/Update CNC12 Tool Library ", description:"Compares Tool Diameter between Fusion and CNC12 Tool Library and updates CNC12 if requested", type:"boolean"},
   //End Property Definitions added by -swissi
 };
 
@@ -173,6 +174,9 @@ var toolNumberGVar    = "#357"   // Variable that will hold the Fusion 360 Tool 
 var toolNumberHVar    = "#358"   // Variable that will hold the Fusion 360 Tool Info for eight Tool used
 var toolNumberIVar    = "#359"   // Variable that will hold the Fusion 360 Tool Info for nineth Tool used
 var toolNumberJVar    = "#360"   // Variable that will hold the Fusion 360 Tool Info for tenth Tool used
+var toolNrVar         = 29000    // CNC12 Variable that holds the total Number of tools being used in a job. Used for CNC12 Tool Library check
+var toolStartNrVar    = 29001    // CNC12 Start Variable Nr that will hold Tool Nr and Tool Diameter (29001 - 29400)
+var gotoSequenceNr    = 0        // Variable to store the Goto sequence number needed for Tool Diameter check
 // End Customizable CNC12 User-String-Variables. -swissi
 
 var gFormat = createFormat({prefix:"G", decimals:0});
@@ -549,6 +553,38 @@ function onOpen() {
       }
     } 
   }
+
+  // Create code to compare Tool Diameters between Fusion and CNC12 Tool Library and Update CNC12 if requested -swissi
+  var tools = getToolTable();
+  if (properties.checkCNC12ToolLibrary) {
+    writeComment("******************** Begin of Tool Library Diameters check ********************");
+    writeBlock("#"+ toolFormat.format(toolNrVar) + " = " + tools.getNumberOfTools());
+    for (var i = 0; i < tools.getNumberOfTools(); ++i) {
+      var tool = tools.getTool(i);
+      var toolNr = "#"+ toolFormat.format(toolStartNrVar + i) + " = " + toolFormat.format(tool.number);
+      var toolDia = "#"+ toolFormat.format(toolStartNrVar + i + 200) + " = " + xyzFormat.format(tool.diameter);
+      writeBlock(toolNr);
+      writeBlock(toolDia);
+    }
+    writeBlock("#100 = 0");
+    writeBlock("#110 = 0");
+    if (properties.showSequenceNumbers) {
+        gotoSequenceNr = sequenceNumber
+        writeBlock(" ;Begin of Tool Check Loop");
+    } else {
+        gotoSequenceNr = 100
+        writeBlock("N100 ; Begin of Tool Check Loop");
+    }
+    writeBlock("If #[11000 + #[13000 + #[" + toolFormat.format(toolStartNrVar) + " + #101]]] != #[" + toolFormat.format(toolStartNrVar) + 
+               " + #101 + 200] Then M224 #100 \"WARNING!\\n\\nTool #\%.0f Diameter does not match!\\n\\nFusion D: \%f\\nCNC12 D: \%f\\n\\n#\)[A]bort\\n#\)[I]gnore and continue\\n#\)[U]pdate CNC12 Library\" #[" 
+               + toolFormat.format(toolStartNrVar) + " + #101] #[" + toolFormat.format(toolStartNrVar + 200) + " + #101] #[11000 + #[13000 + #[" + toolFormat.format(toolStartNrVar) + " + #101]]]");
+    writeBlock("If #100 != 0 && #100 != 1 && #100 != 4 && #100 != 21 Then GOTO " + toolFormat.format(gotoSequenceNr));           
+    writeBlock("If #100 == 1 Then M99");
+    writeBlock("If #100 == 21 Then #[11000 + #[13000 + #[" + toolFormat.format(toolStartNrVar) + " + #101]]] = #[" + toolFormat.format(toolStartNrVar + 200) + " + #101]");
+    writeBlock("#101 = #101 + 1");
+    writeBlock("If #101 < #" + toolFormat.format(toolNrVar) + " Then GOTO " + toolFormat.format(gotoSequenceNr));
+    writeComment("********************* End of Tool Library Diameters check *********************")
+  } 
 
   if ((getNumberOfSections() > 0) && (getSection(0).workOffset == 0)) {
     for (var i = 0; i < getNumberOfSections(); ++i) {
